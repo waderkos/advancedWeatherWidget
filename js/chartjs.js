@@ -10,7 +10,7 @@
   // Grep settings from the forms.
   function getSettings() {
     const $form = $('.weather-form, .charts-form');
-    let $elements = $('input, select', $form)
+    const $elements = $('input, select', $form)
 
     let values = {};
     $elements.each(function () {
@@ -26,7 +26,15 @@
  function buildChart() {
    const weatherSettings = getSettings();
    const forecast = '/advancedweatherwidget/weather_data/forecast';
-   $.get(forecast, {'options': {'lat': weatherSettings.lat, 'lon': weatherSettings.lon, 'q': weatherSettings.q, 'cnt': weatherSettings.cnt}}, function (weatherData, status) {
+   $.get(forecast, {
+     'options':
+       {
+         'lat': weatherSettings.lat,
+         'lon': weatherSettings.lon,
+         'q': weatherSettings.q,
+         'cnt': weatherSettings.cnt
+       }
+     }, function (weatherData, status) {
      if (weatherData) {
        const data = {
          'temp': {
@@ -103,7 +111,7 @@
          }
        }
 
-       let options = {}
+       const options = {}
 
        const ctx = 'weatherChart';
 
@@ -123,7 +131,14 @@
     const weather = '/advancedweatherwidget/weather_data/weather';
 
     if ($weather_app.length) {
-      $.get(weather, {'options': {'lat': weatherSettings.lat, 'lon': weatherSettings.lon, 'q': weatherSettings.q}}, function (data, status) {
+      $.get(weather, {
+        'options':
+          {
+            'lat': weatherSettings.lat,
+            'lon': weatherSettings.lon,
+            'q': weatherSettings.q
+          }
+        }, function (data, status) {
         $( "div.advanced-weather-widget" ).replaceWith(data.html)
       });
 

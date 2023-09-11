@@ -9,3 +9,7 @@ services:
       - '@file_system'
       - '@extension.path.resolver'
       - '@request_stack'
+      - '@advancedweatherwidget.decorator'
+
+  advancedweatherwidget.decorator:
+    class: Drupal\advancedweatherwidget\AdvancedWeatherDecorator
