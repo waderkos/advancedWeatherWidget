@@ -1,0 +1,15 @@
+advancedweatherwidget.settings:
+  path: '/admin/config/services/advancedweathersettings'
+  defaults:
+    _title: 'Advanced weather settings'
+    _form: '\Drupal\advancedweatherwidget\Form\AdvancedWeatherWidgetForm'
+  requirements:
+    _permission: 'administer advanced weather widget settings'
+
+advancedweatherwidget.weather_data:
+  path: '/advancedweatherwidget/weather_data/{type}'
+  defaults:
+    _controller: '\Drupal\advancedweatherwidget\Controller\AdvancedWeatherController::weatherData'
+    _title: 'Weather JSON Data'
+  requirements:
+    _access: 'TRUE'

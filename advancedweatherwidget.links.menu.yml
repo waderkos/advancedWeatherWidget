@@ -1,0 +1,5 @@
+advancedweatherwidget.settings:
+  title: Advanced weather settings
+  description: 'Configure API KEY'
+  route_name: advancedweatherwidget.settings
+  parent: system.admin_config_services

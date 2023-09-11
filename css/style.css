@@ -1,0 +1,33 @@
+.weather-form .form-item,
+.charts-form .form-item {
+  display: inline-block;
+  max-width: 300px;
+}
+
+.charts-form .form-item select {
+  min-width: 100px;
+}
+
+.curent-weather {
+  display: flex;
+  text-transform: capitalize;
+}
+
+.curent-weather h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.general.section {
+  width: 25%;
+  display: inline-block;
+}
+
+.details.section {
+  width: 60%;
+  display: inline-block;
+}
+
+.details.section .block {
+  display: inline-block;
+}

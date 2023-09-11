@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file
+ * Contains openweathermap.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_theme().
+ */
+function advancedweatherwidget_theme() {
+  return [
+    'advanced_weather_widget' => [
+      'variables' => ['weather' => []],
+    ],
+    'advanced_weather_charts' => [
+      'variables' => [],
+    ],
+  ];
+}

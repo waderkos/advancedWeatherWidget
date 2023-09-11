@@ -1,0 +1,11 @@
+services:
+  advancedweatherwidget.advanced_weather_service:
+    class: Drupal\advancedweatherwidget\AdvancedWeatherWidgetService
+    arguments:
+      - '@http_client'
+      - '@cache.data'
+      - '@config.factory'
+      - '@logger.factory'
+      - '@file_system'
+      - '@extension.path.resolver'
+      - '@request_stack'

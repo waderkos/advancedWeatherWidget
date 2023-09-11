@@ -1,0 +1,55 @@
+{#
+/**
+ * @file
+ * Template for the advanced weather widget block.
+#}
+
+<div class="advanced-weather-widget">
+  <div class="curent-weather">
+    {% if weather %}
+    <div class="general section">
+      <div class="city"><h4>{{ weather.name }} {% if weather.country %}, {{ weather.country }} {% endif %}</h4></div>
+      <div class="date">{{ weather.dt }}</div>
+      <div class="icon">
+        <img src="https://openweathermap.org/img/w/{{ weather.icon }}.png"/>
+      </div>
+      <div class="description">{{ weather.description }}</div>
+      <div class="temp">{{ weather.temp }}</div>
+    </div>
+    <div class="details section">
+      <div class="wind section">
+        <h4 class="block-label">{{ 'Wind'|t }}</h4>
+        <div class="speed">
+          <span class="label">{{ 'Speed'|t }}</span>
+          <span class="value">{{ weather.wind.speed }} {{ 'km/h'|t }}</span>
+        </div>
+        <div class="gust">
+          <span class="label">{{ 'Gust'|t }}</span>
+          <span class="value">{{ weather.wind.gust }} {{ 'km/h'|t }}</span>
+        </div>
+      </div>
+      <div class="weather section">
+        <h4 class="block-label">{{ 'Advanced Information'|t }}</h4>
+        <div class="pressure">
+          <span class="label">{{ 'Pressure'|t }}</span>
+          <span class="value">{{ weather.pressure }}</span>
+        </div>
+        <div class="humidity">
+          <span class="label">{{ 'Humidity'|t }}</span>
+          <span class="value">{{ weather.humidity }}</span>
+        </div>
+        <div class="min">
+          <span class="label">{{ 'Min Temperature'|t }}</span>
+          <span class="value">{{ weather.temp_min }}</span>
+        </div>
+        <div class="max">
+          <span class="label">{{ 'Max Temperature'|t }}</span>
+          <span class="value">{{ weather.temp_max }}</span>
+        </div>
+      </div>
+    </div>
+    {% else %}
+      <div class="error">{{ 'The location no found'|t }}</div>
+    {% endif %}
+  </div>
+</div>

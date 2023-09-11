@@ -1,0 +1,7 @@
+name: Advanced Weather Widget
+type: module
+description: 'Provides a weather information widget based on data from openweathermap.org'
+core: 8.x
+core_version_requirement: ^8 || ^9
+configure: advancedweatherwidget.settings
+package: 'Custom'
